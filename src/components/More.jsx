@@ -33,19 +33,18 @@ export const MoreInfoSection = () => {
               Education & Experience
             </h3>
             <p className="text-[#7B837E]">
-              <strong>Education:</strong> Bachelor of Science in Computer
-              Science, University of Lahore, 2018-2022
+              <strong>Education:</strong> Intermediate in Computer Science,
+              Punjab College, 2023-2025
               <br />
-              Graduated with Honors, specializing in Web Development.
+              Learning Web Development.
             </p>
             <p className="text-[#7B837E] mt-4">
-              <strong>Experience:</strong> Web Developer at Tech Solutions, Jan
-              2023 - Present
+              <strong>Experience:</strong> Self Learning Expiernce from Youtube
               <br />
-              Developed and maintained responsive websites for 10+ clients.
-              Freelance Developer, Jun 2022 - Dec 2022
+              Developed and maintained responsive websites
               <br />
-              Completed 15+ projects, enhancing user experience by 40%.
+              Completed 10+ projects for self learning, enhancing user
+              experience by 40%.
             </p>
           </motion.div>
 
@@ -60,14 +59,14 @@ export const MoreInfoSection = () => {
               Strengths & Skills
             </h3>
             <ul className="text-[#7B837E] list-disc list-inside">
-              <li>Proficient in React, JavaScript, and CSS</li>
+              <li>Proficient in HTML, JavaScript, and CSS</li>
               <li>Strong problem-solving and debugging skills</li>
-              <li>Experience with UI/UX design tools like Figma</li>
+              <li>Excellent communication and collaboration abilities</li>
             </ul>
             <p className="text-[#7B837E] mt-4">
-              <strong>Certifications:</strong> Certified Web Developer, 2023
+              <strong>Certifications:</strong> Certified Web Developer, 2025
               <br />
-              Google UX Design Certificate, 2022
+              Apna College
             </p>
           </motion.div>
         </div>
@@ -84,8 +83,9 @@ export const MoreInfoSection = () => {
           </h3>
           <p className="text-[#7B837E]">
             I enjoy exploring new technologies and contributing to open-source
-            projects in my free time. My hobbies include photography and playing
-            chess, which help sharpen my creative and strategic thinking.
+            projects in my free time. My hobbies include Book reading and
+            playing videogames, which help sharpen my creative and strategic
+            thinking.
           </p>
         </motion.div>
       </motion.div>
