@@ -12,7 +12,7 @@ export const Header = () => {
 
   return (
     <motion.div
-      className="fixed top-4 w-full z-50 flex justify-between items-center px-6 text-black bg-white shadow-lg"
+      className="fixed top-4 w-full z-50 flex justify-between items-center px-6 text-white"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
