@@ -24,7 +24,7 @@ export const MoreInfoSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Education & Experience */}
           <motion.div
-            className="bg-[#420D4B] p-6 rounded-lg shadow-lg"
+            className="bg-[#F5D5E0] p-6 rounded-lg shadow-lg"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -32,13 +32,13 @@ export const MoreInfoSection = () => {
             <h3 className="text-xl font-semibold text-[#F5D5E0] mb-4">
               Education & Experience
             </h3>
-            <p className="text-[#7B837E]">
+            <p className="text-[#F5D5E0]">
               <strong>Education:</strong> Intermediate in Computer Science,
               Punjab College, 2023-2025
               <br />
               Learning Web Development.
             </p>
-            <p className="text-[#7B837E] mt-4">
+            <p className="text-[#F5D5E0] mt-4">
               <strong>Experience:</strong> Self Learning Expiernce from Youtube
               <br />
               Developed and maintained responsive websites
@@ -50,7 +50,7 @@ export const MoreInfoSection = () => {
 
           {/* Strengths & Skills */}
           <motion.div
-            className="bg-[#420D4B] p-6 rounded-lg shadow-lg"
+            className="bg-[#F5D5E0] p-6 rounded-lg shadow-lg"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -58,12 +58,12 @@ export const MoreInfoSection = () => {
             <h3 className="text-xl font-semibold text-[#F5D5E0] mb-4">
               Strengths & Skills
             </h3>
-            <ul className="text-[#7B837E] list-disc list-inside">
+            <ul className="text-[#F5D5E0] list-disc list-inside">
               <li>Proficient in HTML, JavaScript, and CSS</li>
               <li>Strong problem-solving and debugging skills</li>
               <li>Excellent communication and collaboration abilities</li>
             </ul>
-            <p className="text-[#7B837E] mt-4">
+            <p className="text-[#F5D5E0] mt-4">
               <strong>Certifications:</strong> Certified Web Developer, 2025
               <br />
               Apna College
@@ -81,7 +81,7 @@ export const MoreInfoSection = () => {
           <h3 className="text-xl font-semibold text-[#F5D5E0] mb-4">
             Additional Info
           </h3>
-          <p className="text-[#7B837E]">
+          <p className="text-[#F5D5E0]">
             I enjoy exploring new technologies and contributing to open-source
             projects in my free time. My hobbies include Book reading and
             playing videogames, which help sharpen my creative and strategic
