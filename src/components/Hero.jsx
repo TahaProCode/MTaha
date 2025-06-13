@@ -56,9 +56,10 @@ export const HeroSection = () => {
           <p className="text-xl md:text-2xl mt-2">Full Stack Web Developer</p>
           <p className="text-sm md:text-base mt-4 text-[#7B837E]">
             Hi, I'm a passionate self-taught Full Stack Web Developer with
-            expertise in HTML, CSS, JavaScript, and the MERN stack. Fueled by
-            curiosity and YouTube tutorials, I'm on a mission to master web
-            development and build innovative, user-friendly applications.
+            expertise in HTML, CSS, JavaScript, and the MERN stack.
+            <br /> Fueled by curiosity and YouTube tutorials, I'm on a mission
+            to master web development and build innovative, user-friendly
+            applications.
           </p>
         </motion.div>
 
