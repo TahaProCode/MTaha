@@ -24,7 +24,7 @@ export const MoreInfoSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Education & Experience */}
           <motion.div
-            className="bg-[#F5D5E0] p-6 rounded-lg shadow-lg"
+            className="bg-[#420D4B] p-6 rounded-lg shadow-lg"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -50,7 +50,7 @@ export const MoreInfoSection = () => {
 
           {/* Strengths & Skills */}
           <motion.div
-            className="bg-[#F5D5E0] p-6 rounded-lg shadow-lg"
+            className="bg-[#420D4B] p-6 rounded-lg shadow-lg"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
