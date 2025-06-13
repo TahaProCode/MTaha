@@ -58,7 +58,7 @@ export const HeroSection = () => {
             Hi, I'm a passionate self-taught Full Stack Web Developer with
             expertise in HTML, CSS, JavaScript, and the MERN stack. Fueled by
             curiosity and YouTube tutorials, I'm on a mission to master web
-            development and build innovative, user-friendly applications
+            development and build innovative, user-friendly applications.
           </p>
         </motion.div>
 
