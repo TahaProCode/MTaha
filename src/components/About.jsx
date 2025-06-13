@@ -4,7 +4,7 @@ import pic from "./myimage.png";
 
 export const AboutSection = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center min-h-screen p-4 sm:p-6 bg-[#210636] w-full">
+    <div className="flex flex-col md:flex-row items-center justify-center min-h-screen p-4 sm:p-6 bg-[#210636] min-w-full">
       {/* Left Side - Image Placeholder */}
       <motion.div
         className="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 mb-6 md:mb-0 md:mr-6 lg:mr-8 shrink-0"
@@ -13,7 +13,11 @@ export const AboutSection = () => {
         transition={{ duration: 0.6 }}
       >
         <div className="w-full h-full rounded-full bg-[#6667AB] overflow-hidden">
-          <img src={pic} alt="Muhammad Taha" className="w-full h-full object-cover" />
+          <img
+            src={pic}
+            alt="Muhammad Taha"
+            className="w-full h-full object-cover"
+          />
         </div>
       </motion.div>
 
