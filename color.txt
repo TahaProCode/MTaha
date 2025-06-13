@@ -1,0 +1,2 @@
+text-[#F5D5E0] //pink
+#210636 //purple
