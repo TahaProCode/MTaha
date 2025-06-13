@@ -34,17 +34,17 @@ export const Header = () => {
           transition={{ duration: 0.3 }}
         >
           <span
-            className={`w-full h-0.5 bg-white transition-all duration-300 ${
+            className={`w-full h-0.5 bg-[#F5D5E0] transition-all duration-300 ${
               isMenuOpen ? "translate-y-2 rotate-45" : ""
             }`}
           ></span>
           <span
-            className={`w-full h-0.5 bg-white transition-all duration-300 ${
+            className={`w-full h-0.5 bg-[#F5D5E0] transition-all duration-300 ${
               isMenuOpen ? "opacity-0" : ""
             }`}
           ></span>
           <span
-            className={`w-full h-0.5 bg-white transition-all duration-300 ${
+            className={`w-full h-0.5 bg-[#F5D5E0] transition-all duration-300 ${
               isMenuOpen ? "-translate-y-2 -rotate-45" : ""
             }`}
           ></span>
