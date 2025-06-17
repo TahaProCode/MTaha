@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 import Docsmini from "./docsmini.png";
-import lightSaasLandingPage from "./dark.png";
+import lightSaasLandingPage from "./hms cs.png";
 import aiStartupLandingPage from "./lazarev.png";
 import Docsdark from "./ai.png";
 
@@ -19,9 +19,9 @@ const projects = [
     image: Docsmini,
   },
   {
-    company: "Quantum Dynamics",
-    year: "2023",
-    title: "AI Startup Landing Page",
+    company: "Lazarev Animated Website",
+    year: "2024",
+    title: "Lazarev Animated Website",
     results: [
       { title: "Enhanced user experience by 40%" },
       { title: "Improved site speed by 50%" },
@@ -31,9 +31,9 @@ const projects = [
     image: aiStartupLandingPage,
   },
   {
-    company: "Innovative Co",
-    year: "2021",
-    title: "Light Saas Landing Page",
+    company: "Hospitals Management System",
+    year: "2025",
+    title: "HMS Admin Panel",
     results: [
       { title: "Boosted sales by 20%" },
       { title: "Expanded customer reach by 35%" },
