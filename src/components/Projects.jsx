@@ -39,7 +39,7 @@ const projects = [
       { title: "Expanded customer reach by 35%" },
       { title: "Increased brand awareness by 15%" },
     ],
-    link: "https://youtu.be/7hi5zwO75yc",
+    link: "https://hmshospitalmanagementsystem.netlify.app/",
     image: lightSaasLandingPage,
   },
 
