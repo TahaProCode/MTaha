@@ -6,6 +6,7 @@ import Docsmini from "./docsmini.png";
 import lightSaasLandingPage from "./hms cs.png";
 import aiStartupLandingPage from "./lazarev.png";
 import Docsdark from "./ai.png";
+import GrocerApp from "./grocerapp.png";
 
 const projects = [
   {
@@ -46,16 +47,16 @@ const projects = [
   },
 
   {
-    company: "Quantum Dynamics",
+    company: "Grocer App E-commerce store",
     year: "2023",
-    title: "AI Startup Landing Page",
+    title: "Mern Stack E-commerce Store",
     results: [
       { title: "Enhanced user experience by 40%" },
       { title: "Improved site speed by 50%" },
       { title: "Increased mobile traffic by 35%" },
     ],
-    link: "https://youtu.be/Z7I5uSRHMHg",
-    image: Docsdark,
+    link: "https://grocerapp.netlify.app/",
+    image: GrocerApp,
   },
   {
     company: "Quantum Dynamics",
