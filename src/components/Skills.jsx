@@ -11,27 +11,37 @@ import { motion } from "framer-motion";
 
 export const SkillsSection = () => {
   return (
-    <div className="bg-[#210635] text-[#F5D5E0] py-12 min-h-screen min-w-screen flex flex-col items-center justify-center">
-      <div className="max-w-6xl mx-auto px-4">
+    <section className="relative min-h-screen min-w-screen bg-[#210636] py-20">
+      {/* Ambient gradients matching theme */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-28 -left-28 h-80 w-80 rounded-full bg-[#4b0082]/30 blur-3xl"></div>
+        <div className="absolute -bottom-28 -right-28 h-96 w-96 rounded-full bg-[#6a0dad]/30 blur-3xl"></div>
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6">
         <motion.h2
-          className="text-3xl font-bold text-center mb-4"
+          className="mb-3 text-center text-4xl font-extrabold text-white md:text-5xl"
           initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          My Work Skills
+          <span className="bg-gradient-to-r from-white via-[#cbb6ff] to-white bg-clip-text text-transparent">
+            My Work Skills
+          </span>
         </motion.h2>
         <motion.p
-          className="text-[#7B837E] text-center mb-8"
+          className="mx-auto mb-10 max-w-3xl text-center text-[#A6A9B0]"
           initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
         >
-          Here is my Skills Rack Elaborates my skills and expertise in web
-          development, including front-end and back-end technologies.
+          Here is my Skills Rack elaborating my expertise across front‑end and
+          back‑end technologies.
         </motion.p>
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6"
+          className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4"
           initial="hidden"
           animate="visible"
           variants={{
@@ -46,7 +56,7 @@ export const SkillsSection = () => {
         >
           {/* Skill 1: HTML */}
           <motion.div
-            className="bg-[#420D4B] p-6 rounded-lg flex flex-col items-center shadow-lg"
+            className="group relative flex flex-col items-center overflow-hidden rounded-2xl p-[2px]"
             variants={{
               hidden: { y: 50, opacity: 0 },
               visible: { y: 0, opacity: 1 },
@@ -54,20 +64,23 @@ export const SkillsSection = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
-            <FaHtml5 size={50} color="#F5D5E0" />
-            <h3 className="text-lg font-semibold mb-2">HTML</h3>
-            <div className="w-full bg-[#6667AB] rounded-full h-2.5">
-              <div
-                className="bg-[#F5D5E0] h-2.5 rounded-full"
-                style={{ width: "90%" }}
-              ></div>
+            <div className="absolute inset-0 -z-10 animate-[spin_12s_linear_infinite] rounded-2xl bg-[conic-gradient(from_0deg,rgba(75,0,130,0.25),rgba(106,13,173,0.25),rgba(75,0,130,0.25))]"></div>
+            <div className="relative z-10 flex w-full flex-col items-center rounded-2xl bg-[#16072c]/80 p-6 ring-1 ring-white/10 backdrop-blur">
+              <FaHtml5 size={50} color="#F5D5E0" />
+              <h3 className="mb-2 text-lg font-semibold text-white">HTML</h3>
+              <div className="h-2.5 w-full rounded-full bg-white/10">
+                <div
+                  className="h-2.5 rounded-full bg-gradient-to-r from-[#4b0082] to-[#6a0dad]"
+                  style={{ width: "90%" }}
+                ></div>
+              </div>
+              <p className="mt-2 text-[#E9D1FF]">90%</p>
             </div>
-            <p className="text-[#F5D5E0] mt-2">90%</p>
           </motion.div>
 
           {/* Skill 2: Tailwind CSS */}
           <motion.div
-            className="bg-[#420D4B] p-6 rounded-lg flex flex-col items-center shadow-lg"
+            className="group relative flex flex-col items-center overflow-hidden rounded-2xl p-[2px]"
             variants={{
               hidden: { y: 50, opacity: 0 },
               visible: { y: 0, opacity: 1 },
@@ -75,20 +88,25 @@ export const SkillsSection = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
-            <RiTailwindCssFill size={50} color="#F5D5E0" />
-            <h3 className="text-lg font-semibold mb-2">Tailwind Css</h3>
-            <div className="w-full bg-[#6667AB] rounded-full h-2.5">
-              <div
-                className="bg-[#F5D5E0] h-2.5 rounded-full"
-                style={{ width: "85%" }}
-              ></div>
+            <div className="absolute inset-0 -z-10 animate-[spin_12s_linear_infinite] rounded-2xl bg-[conic-gradient(from_0deg,rgba(75,0,130,0.25),rgba(106,13,173,0.25),rgba(75,0,130,0.25))]"></div>
+            <div className="relative z-10 flex w-full flex-col items-center rounded-2xl bg-[#16072c]/80 p-6 ring-1 ring-white/10 backdrop-blur">
+              <RiTailwindCssFill size={50} color="#F5D5E0" />
+              <h3 className="mb-2 text-lg font-semibold text-white">
+                Tailwind Css
+              </h3>
+              <div className="h-2.5 w-full rounded-full bg-white/10">
+                <div
+                  className="h-2.5 rounded-full bg-gradient-to-r from-[#4b0082] to-[#6a0dad]"
+                  style={{ width: "85%" }}
+                ></div>
+              </div>
+              <p className="mt-2 text-[#E9D1FF]">85%</p>
             </div>
-            <p className="text-[#F5D5E0] mt-2">85%</p>
           </motion.div>
 
           {/* Skill 3: JavaScript */}
           <motion.div
-            className="bg-[#420D4B] p-6 rounded-lg flex flex-col items-center shadow-lg"
+            className="group relative flex flex-col items-center overflow-hidden rounded-2xl p-[2px]"
             variants={{
               hidden: { y: 50, opacity: 0 },
               visible: { y: 0, opacity: 1 },
@@ -96,20 +114,25 @@ export const SkillsSection = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
-            <IoLogoJavascript size={50} color="#F5D5E0" />
-            <h3 className="text-lg font-semibold mb-2">JavaScript</h3>
-            <div className="w-full bg-[#6667AB] rounded-full h-2.5">
-              <div
-                className="bg-[#F5D5E0] h-2.5 rounded-full"
-                style={{ width: "70%" }}
-              ></div>
+            <div className="absolute inset-0 -z-10 animate-[spin_12s_linear_infinite] rounded-2xl bg-[conic-gradient(from_0deg,rgba(75,0,130,0.25),rgba(106,13,173,0.25),rgba(75,0,130,0.25))]"></div>
+            <div className="relative z-10 flex w-full flex-col items-center rounded-2xl bg-[#16072c]/80 p-6 ring-1 ring-white/10 backdrop-blur">
+              <IoLogoJavascript size={50} color="#F5D5E0" />
+              <h3 className="mb-2 text-lg font-semibold text-white">
+                JavaScript
+              </h3>
+              <div className="h-2.5 w-full rounded-full bg-white/10">
+                <div
+                  className="h-2.5 rounded-full bg-gradient-to-r from-[#4b0082] to-[#6a0dad]"
+                  style={{ width: "70%" }}
+                ></div>
+              </div>
+              <p className="mt-2 text-[#E9D1FF]">70%</p>
             </div>
-            <p className="text-[#F5D5E0] mt-2">70%</p>
           </motion.div>
 
           {/* Skill 4: React */}
           <motion.div
-            className="bg-[#420D4B] p-6 rounded-lg flex flex-col items-center shadow-lg"
+            className="group relative flex flex-col items-center overflow-hidden rounded-2xl p-[2px]"
             variants={{
               hidden: { y: 50, opacity: 0 },
               visible: { y: 0, opacity: 1 },
@@ -117,20 +140,23 @@ export const SkillsSection = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
-            <FaReact size={50} color="#F5D5E0" />
-            <h3 className="text-lg font-semibold mb-2">React</h3>
-            <div className="w-full bg-[#6667AB] rounded-full h-2.5">
-              <div
-                className="bg-[#F5D5E0] h-2.5 rounded-full"
-                style={{ width: "60%" }}
-              ></div>
+            <div className="absolute inset-0 -z-10 animate-[spin_12s_linear_infinite] rounded-2xl bg-[conic-gradient(from_0deg,rgba(75,0,130,0.25),rgba(106,13,173,0.25),rgba(75,0,130,0.25))]"></div>
+            <div className="relative z-10 flex w-full flex-col items-center rounded-2xl bg-[#16072c]/80 p-6 ring-1 ring-white/10 backdrop-blur">
+              <FaReact size={50} color="#F5D5E0" />
+              <h3 className="mb-2 text-lg font-semibold text-white">React</h3>
+              <div className="h-2.5 w-full rounded-full bg-white/10">
+                <div
+                  className="h-2.5 rounded-full bg-gradient-to-r from-[#4b0082] to-[#6a0dad]"
+                  style={{ width: "60%" }}
+                ></div>
+              </div>
+              <p className="mt-2 text-[#E9D1FF]">60%</p>
             </div>
-            <p className="text-[#F5D5E0] mt-2">60%</p>
           </motion.div>
 
           {/* Skill 5: Express */}
           <motion.div
-            className="bg-[#420D4B] p-6 rounded-lg flex flex-col items-center shadow-lg"
+            className="group relative flex flex-col items-center overflow-hidden rounded-2xl p-[2px]"
             variants={{
               hidden: { y: 50, opacity: 0 },
               visible: { y: 0, opacity: 1 },
@@ -138,20 +164,23 @@ export const SkillsSection = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
-            <SiExpress size={50} color="#F5D5E0" />
-            <h3 className="text-lg font-semibold mb-2">Express</h3>
-            <div className="w-full bg-[#6667AB] rounded-full h-2.5">
-              <div
-                className="bg-[#F5D5E0] h-2.5 rounded-full"
-                style={{ width: "45%" }}
-              ></div>
+            <div className="absolute inset-0 -z-10 animate-[spin_12s_linear_infinite] rounded-2xl bg-[conic-gradient(from_0deg,rgba(75,0,130,0.25),rgba(106,13,173,0.25),rgba(75,0,130,0.25))]"></div>
+            <div className="relative z-10 flex w-full flex-col items-center rounded-2xl bg-[#16072c]/80 p-6 ring-1 ring-white/10 backdrop-blur">
+              <SiExpress size={50} color="#F5D5E0" />
+              <h3 className="mb-2 text-lg font-semibold text-white">Express</h3>
+              <div className="h-2.5 w-full rounded-full bg-white/10">
+                <div
+                  className="h-2.5 rounded-full bg-gradient-to-r from-[#4b0082] to-[#6a0dad]"
+                  style={{ width: "45%" }}
+                ></div>
+              </div>
+              <p className="mt-2 text-[#E9D1FF]">45%</p>
             </div>
-            <p className="text-[#F5D5E0] mt-2">45%</p>
           </motion.div>
 
           {/* Skill 6: NodeJS */}
           <motion.div
-            className="bg-[#420D4B] p-6 rounded-lg flex flex-col items-center shadow-lg"
+            className="group relative flex flex-col items-center overflow-hidden rounded-2xl p-[2px]"
             variants={{
               hidden: { y: 50, opacity: 0 },
               visible: { y: 0, opacity: 1 },
@@ -159,20 +188,23 @@ export const SkillsSection = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
-            <FaNode size={50} color="#F5D5E0" />
-            <h3 className="text-lg font-semibold mb-2">NodeJS</h3>
-            <div className="w-full bg-[#6667AB] rounded-full h-2.5">
-              <div
-                className="bg-[#F5D5E0] h-2.5 rounded-full"
-                style={{ width: "50%" }}
-              ></div>
+            <div className="absolute inset-0 -z-10 animate-[spin_12s_linear_infinite] rounded-2xl bg-[conic-gradient(from_0deg,rgba(75,0,130,0.25),rgba(106,13,173,0.25),rgba(75,0,130,0.25))]"></div>
+            <div className="relative z-10 flex w-full flex-col items-center rounded-2xl bg-[#16072c]/80 p-6 ring-1 ring-white/10 backdrop-blur">
+              <FaNode size={50} color="#F5D5E0" />
+              <h3 className="mb-2 text-lg font-semibold text-white">NodeJS</h3>
+              <div className="h-2.5 w-full rounded-full bg-white/10">
+                <div
+                  className="h-2.5 rounded-full bg-gradient-to-r from-[#4b0082] to-[#6a0dad]"
+                  style={{ width: "50%" }}
+                ></div>
+              </div>
+              <p className="mt-2 text-[#E9D1FF]">50%</p>
             </div>
-            <p className="text-[#F5D5E0] mt-2">50%</p>
           </motion.div>
 
           {/* Skill 7: MongoDB */}
           <motion.div
-            className="bg-[#420D4B] p-6 rounded-lg flex flex-col items-center shadow-lg"
+            className="group relative flex flex-col items-center overflow-hidden rounded-2xl p-[2px]"
             variants={{
               hidden: { y: 50, opacity: 0 },
               visible: { y: 0, opacity: 1 },
@@ -180,20 +212,23 @@ export const SkillsSection = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
-            <DiMongodb size={50} color="#F5D5E0" />
-            <h3 className="text-lg font-semibold mb-2">MongoDb</h3>
-            <div className="w-full bg-[#6667AB] rounded-full h-2.5">
-              <div
-                className="bg-[#F5D5E0] h-2.5 rounded-full"
-                style={{ width: "30%" }}
-              ></div>
+            <div className="absolute inset-0 -z-10 animate-[spin_12s_linear_infinite] rounded-2xl bg-[conic-gradient(from_0deg,rgba(75,0,130,0.25),rgba(106,13,173,0.25),rgba(75,0,130,0.25))]"></div>
+            <div className="relative z-10 flex w-full flex-col items-center rounded-2xl bg-[#16072c]/80 p-6 ring-1 ring-white/10 backdrop-blur">
+              <DiMongodb size={50} color="#F5D5E0" />
+              <h3 className="mb-2 text-lg font-semibold text-white">MongoDb</h3>
+              <div className="h-2.5 w-full rounded-full bg-white/10">
+                <div
+                  className="h-2.5 rounded-full bg-gradient-to-r from-[#4b0082] to-[#6a0dad]"
+                  style={{ width: "30%" }}
+                ></div>
+              </div>
+              <p className="mt-2 text-[#E9D1FF]">30%</p>
             </div>
-            <p className="text-[#F5D5E0] mt-2">30%</p>
           </motion.div>
 
           {/* Skill 8: NextJs */}
           <motion.div
-            className="bg-[#420D4B] p-6 rounded-lg flex flex-col items-center shadow-lg"
+            className="group relative flex flex-col items-center overflow-hidden rounded-2xl p-[2px]"
             variants={{
               hidden: { y: 50, opacity: 0 },
               visible: { y: 0, opacity: 1 },
@@ -201,19 +236,22 @@ export const SkillsSection = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
-            <RiNextjsFill size={50} color="#F5D5E0" />
-            <h3 className="text-lg font-semibold mb-2">NextJs</h3>
-            <div className="w-full bg-[#6667AB] rounded-full h-2.5">
-              <div
-                className="bg-[#F5D5E0] h-2.5 rounded-full"
-                style={{ width: "40%" }}
-              ></div>
+            <div className="absolute inset-0 -z-10 animate-[spin_12s_linear_infinite] rounded-2xl bg-[conic-gradient(from_0deg,rgba(75,0,130,0.25),rgba(106,13,173,0.25),rgba(75,0,130,0.25))]"></div>
+            <div className="relative z-10 flex w-full flex-col items-center rounded-2xl bg-[#16072c]/80 p-6 ring-1 ring-white/10 backdrop-blur">
+              <RiNextjsFill size={50} color="#F5D5E0" />
+              <h3 className="mb-2 text-lg font-semibold text-white">NextJs</h3>
+              <div className="h-2.5 w-full rounded-full bg-white/10">
+                <div
+                  className="h-2.5 rounded-full bg-gradient-to-r from-[#4b0082] to-[#6a0dad]"
+                  style={{ width: "40%" }}
+                ></div>
+              </div>
+              <p className="mt-2 text-[#E9D1FF]">40%</p>
             </div>
-            <p className="text-[#F5D5E0] mt-2">40%</p>
           </motion.div>
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 

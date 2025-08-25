@@ -4,63 +4,89 @@ import pic from "./myimage.png";
 
 export const AboutSection = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center min-h-screen p-4 sm:p-6 bg-[#210636] min-w-full">
-      {/* Left Side - Image Placeholder */}
-      <motion.div
-        className="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 mb-6 md:mb-0 md:mr-6 lg:mr-8 shrink-0"
-        initial={{ scale: 0.9, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.6 }}
-      >
-        <div className="w-full h-full rounded-full bg-[#6667AB] overflow-hidden">
-          <img
-            src={pic}
-            alt="Muhammad Taha"
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </motion.div>
+    <section className="relative min-h-screen min-w-full bg-[#210636] py-20">
+      {/* Ambient gradients matching hero */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-28 -left-28 h-80 w-80 rounded-full bg-[#4b0082]/30 blur-3xl"></div>
+        <div className="absolute -bottom-28 -right-28 h-96 w-96 rounded-full bg-[#6a0dad]/30 blur-3xl"></div>
+      </div>
 
-      {/* Right Side - Text and Buttons */}
-      <motion.div
-        className="text-center md:text-left px-4 sm:px-0"
-        initial={{ x: 50, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-[#F5D5E0]">
-          Muhammad Taha
-        </h1>
-        <h2 className="text-base sm:text-lg md:text-xl font-semibold mb-6 text-[#F5D5E0]">
-          A Bit About Me
-        </h2>
-        <p className="text-sm sm:text-base md:text-lg mb-8 max-w-md sm:max-w-lg md:max-w-md text-[#F5D5E0]">
-          I’m Muhammad Taha Attique, a passionate self-taught web developer with
-          1.5 years of experience, specializing in both frontend and backend
-          development. I’ve honed my skills through platforms like YouTube and a
-          comprehensive paid course from Apna College, focusing on the MERN
-          stack to build dynamic and responsive web applications from scratch. I
-          thrive on transforming ideas into functional, user-friendly solutions,
-          blending creativity with technical precision. My journey reflects a
-          relentless drive for learning and innovation, making me a versatile
-          developer ready to tackle diverse projects with confidence.
-        </p>
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 md:grid-cols-2">
+        {/* Left: Glowing framed image */}
         <motion.div
-          className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          initial={{ scale: 0.95, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="relative mx-auto w-full max-w-md"
         >
-          <button className="bg-[#F5D5E0] text-[#6667AB] rounded-full py-2 px-6 hover:bg-[#420D4B] transition duration-300">
-            <a href="Taha Resume.pdf" download>
-              Resume
-            </a>
-          </button>
-          <button className="bg-[#F5D5E0] text-[#6667AB] rounded-full py-2 px-6 hover:bg-[#420D4B] transition duration-300">
-            Research
-          </button>
+          <div className="relative rounded-3xl p-[3px]">
+            <div className="absolute inset-0 -z-10 animate-[spin_12s_linear_infinite] rounded-3xl bg-[conic-gradient(from_0deg,rgba(75,0,130,0.35),rgba(106,13,173,0.35),rgba(75,0,130,0.35))]"></div>
+            <div className="relative rounded-3xl bg-[#15072b]/70 p-3 ring-1 ring-white/10 backdrop-blur-lg shadow-2xl">
+              <div className="relative overflow-hidden rounded-2xl">
+                <img
+                  src={pic}
+                  alt="Muhammad Taha"
+                  className="h-auto w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Decorative orbs */}
+          <div className="pointer-events-none absolute -left-6 -top-6 h-24 w-24 rounded-full bg-[#4b0082]/30 blur-2xl"></div>
+          <div className="pointer-events-none absolute -bottom-8 -right-6 h-24 w-24 rounded-full bg-[#6a0dad]/30 blur-2xl"></div>
         </motion.div>
-      </motion.div>
-    </div>
+
+        {/* Right: Text content and buttons */}
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="text-center md:text-left"
+        >
+          <h2 className="text-4xl font-extrabold leading-tight text-white md:text-5xl">
+            <span className="block bg-gradient-to-r from-white via-[#cbb6ff] to-white bg-clip-text text-transparent">
+              Muhammad Taha
+            </span>
+          </h2>
+          <p className="mt-2 text-lg font-semibold text-[#cdb4ff] md:text-xl">
+            A Bit About Me
+          </p>
+
+          <p className="mt-6 max-w-2xl text-sm leading-7 text-[#E9D1FF]/90 md:text-base">
+            I’m Muhammad Taha Attique, a passionate self-taught web developer
+            with 1.5 years of experience, specializing in both frontend and
+            backend development. I’ve honed my skills through platforms like
+            YouTube and a comprehensive paid course from Apna College, focusing
+            on the MERN stack to build dynamic and responsive web applications
+            from scratch. I thrive on transforming ideas into functional,
+            user-friendly solutions, blending creativity with technical
+            precision. My journey reflects a relentless drive for learning and
+            innovation, making me a versatile developer ready to tackle diverse
+            projects with confidence.
+          </p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-8 flex flex-col items-center gap-4 md:flex-row md:items-center"
+          >
+            <a href="Taha Resume.pdf" download className="group inline-flex">
+              <span className="relative inline-flex items-center justify-center overflow-hidden rounded-full p-[2px]">
+                <span className="absolute inset-0 -z-10 animate-[spin_6s_linear_infinite] rounded-full bg-[conic-gradient(from_0deg,rgba(75,0,130,0.6),rgba(106,13,173,0.6),rgba(75,0,130,0.6))]"></span>
+                <span className="relative rounded-full bg-[#120626] px-6 py-2 text-sm font-semibold text-white shadow-lg ring-1 ring-white/10 transition-colors group-hover:bg-[#1b0a33]">
+                  Download Resume
+                </span>
+              </span>
+            </a>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
   );
 };
