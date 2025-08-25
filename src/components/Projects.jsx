@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import Docsmini from "./docsmini.png";
 import lightSaasLandingPage from "./hms cs.png";
 import aiStartupLandingPage from "./lazarev.png";
-import Docsdark from "./ai.png";
 import GrocerApp from "./grocerapp.png";
 
 const projects = [
