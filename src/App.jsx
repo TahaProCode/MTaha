@@ -14,10 +14,10 @@ function App() {
       <Header />
       {/* This is the HeroSection component */}
       <HeroSection />
-      {/* This is the AboutSection component */}
-      <AboutSection />
       {/* This is the ProjectsSection component */}
       <ProjectsSection />
+      {/* This is the AboutSection component */}
+      <AboutSection />
       {/* This is the SkillsSection component */}
       <SkillsSection />
       {/* This is the ContactSection component */}

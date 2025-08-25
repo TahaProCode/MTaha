@@ -36,7 +36,7 @@ export const HeroSection = () => {
             </h1>
 
             <p className="mt-4 text-xl font-semibold text-[#cdb4ff] md:text-2xl">
-              Full Stack Web Developer
+              Junior Full Stack Developer
             </p>
 
             <p className="mt-5 max-w-2xl text-sm leading-6 text-[#A6A9B0] md:text-base">
