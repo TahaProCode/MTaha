@@ -127,4 +127,4 @@ export const HeroSection = () => {
     </section>
   );
 };
-export default Hero;
+export default HeroSection;
