@@ -80,8 +80,8 @@ export const ContactSection = () => {
         >
           <div className="relative rounded-3xl p-[3px]">
             <div className="absolute inset-0 -z-10 "></div>
-            <div className="relative rounded-3xl">
-              <Interactive3DContact height={520} textureSrc={pic} />
+            <div className="relative rounded-3xl h-[360px] sm:h-[420px] md:h-[520px] lg:h-[560px]">
+              <Interactive3DContact textureSrc={pic} />
             </div>
           </div>
         </motion.div>

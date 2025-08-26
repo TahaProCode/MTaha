@@ -41,8 +41,8 @@ const RotatingFloatingImage = ({ textureSrc }) => {
 const Interactive3DContact = ({ height = 280, className = "", textureSrc }) => {
   return (
     <div
-      className={`relative w-full overflow-hidden rounded-2xl  shadow-2xl ${className}`}
-      style={{ height, background: "#120626" }}
+      className={`relative w-full h-full overflow-hidden rounded-2xl shadow-2xl ${className}`}
+      style={{ ...(height ? { height } : {}), background: "#120626" }}
     >
       <Canvas
         dpr={[1, 2]}
