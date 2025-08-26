@@ -8,18 +8,21 @@ import { SkillsSection } from "./components/Skills";
 import { ProjectsSection } from "./components/Projects.jsx";
 import { ContactSection } from "./components/Contact";
 import { MoreInfoSection } from "./components/More";
+import LenisProvider from "./components/LenisProvider.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/*" element={<App />} />
-        <Route path="/:id" element={<App />} />
-        <Route path="/About" element={<AboutSection />} />
-        <Route path="/projects" element={<ProjectsSection />} />
-        <Route path="/skills" element={<SkillsSection />} />
-        <Route path="/contact" element={<ContactSection />} />
-        <Route path="/More" element={<MoreInfoSection />} />
-      </Routes>
-    </BrowserRouter>
+    <LenisProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/*" element={<App />} />
+          <Route path="/:id" element={<App />} />
+          <Route path="/About" element={<AboutSection />} />
+          <Route path="/projects" element={<ProjectsSection />} />
+          <Route path="/skills" element={<SkillsSection />} />
+          <Route path="/contact" element={<ContactSection />} />
+          <Route path="/More" element={<MoreInfoSection />} />
+        </Routes>
+      </BrowserRouter>
+    </LenisProvider>
   </StrictMode>
 );

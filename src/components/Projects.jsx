@@ -1,13 +1,13 @@
-import { motion, useAnimation } from "framer-motion";
-import { FaPlay, FaPause, FaRedo } from "react-icons/fa";
-import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 import Docsmini from "./docsmini.png";
 import lightSaasLandingPage from "./hms cs.png";
 import aiStartupLandingPage from "./lazarev.png";
 import GrocerApp from "./grocer.png";
 
-const projects = [
+// Define the base projects
+const baseProjects = [
   {
     company: "Learning Purpose",
     year: "2024",
@@ -44,89 +44,28 @@ const projects = [
     link: "https://hmshospitalmanagementsystem.netlify.app/",
     image: lightSaasLandingPage,
   },
-
-  {
-    company: "Grocer App E-commerce store",
-    year: "2023",
-    title: "Mern Stack E-commerce Store",
-    results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
-    ],
-    link: "https://grocerapp.netlify.app/",
-    image: GrocerApp,
-  },
-  {
-    company: "Quantum Dynamics",
-    year: "2023",
-    title: "AI Startup Landing Page",
-    results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
-    ],
-    link: "https://youtu.be/Z7I5uSRHMHg",
-    image: lightSaasLandingPage,
-  },
-  {
-    company: "Quantum Dynamics",
-    year: "2023",
-    title: "AI Startup Landing Page",
-    results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
-    ],
-    link: "https://youtu.be/Z7I5uSRHMHg",
-    image: aiStartupLandingPage,
-  },
 ];
 
-// Extend to 9 by repeating the first three items
-const extendedProjects = [...projects, ...projects.slice(0, 3)];
+// Create 9 projects by tripling the base projects
+const projects = [
+  ...baseProjects,
+  ...baseProjects.map((project, index) => ({
+    ...project,
+    title: `${project.title} (v2)`,
+    company: `${project.company} - Variant 2`,
+    link: `${project.link}?variant=2-${index}`,
+  })),
+  ...baseProjects.map((project, index) => ({
+    ...project,
+    title: `${project.title} (v3)`,
+    company: `${project.company} - Variant 3`,
+    link: `${project.link}?variant=3-${index}`,
+  })),
+];
 
 export const ProjectsSection = () => {
-  const controls = useAnimation();
-  const trackRef = useRef(null);
-  const [maxX, setMaxX] = useState(0);
-  const [isHovering, setIsHovering] = useState(false);
-
-  useEffect(() => {
-    const el = trackRef.current;
-    if (!el) return;
-    const containerWidth = el.parentElement?.offsetWidth || 0;
-    const contentWidth = el.scrollWidth || 0;
-    const delta = Math.max(0, contentWidth - containerWidth);
-    setMaxX(delta);
-  }, [trackRef]);
-
-  useEffect(() => {
-    if (!maxX) return;
-    controls.start({
-      x: [0, -maxX],
-      transition: {
-        duration: Math.max(12, maxX / 100),
-        ease: "linear",
-        repeat: Infinity,
-      },
-    });
-  }, [controls, maxX]);
-
-  useEffect(() => {
-    if (isHovering) {
-      controls.stop();
-    } else if (maxX) {
-      controls.start({
-        x: [0, -maxX],
-        transition: {
-          duration: Math.max(12, maxX / 100),
-          ease: "linear",
-          repeat: Infinity,
-        },
-      });
-    }
-  }, [isHovering, controls, maxX]);
+  const [showAll, setShowAll] = useState(false);
+  const visibleProjects = showAll ? projects : projects.slice(0, 6);
 
   return (
     <section className="relative min-w-screen bg-[#210636] py-24">
@@ -147,30 +86,21 @@ export const ProjectsSection = () => {
           Best Ever Projects
         </motion.h2>
 
-        {/* Slider Shell */}
+        {/* Grid Container */}
         <div className="relative">
           {/* Glow ring */}
           <div className="pointer-events-none absolute inset-0 -z-10 rounded-3xl bg-gradient-to-r from-[#4b0082]/20 via-transparent to-[#6a0dad]/20 blur-xl"></div>
 
-          {/* Masked overflow container */}
-          <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
-            <motion.div
-              ref={trackRef}
-              className="flex select-none gap-8"
-              drag="x"
-              dragConstraints={{ left: -maxX, right: 0 }}
-              dragTransition={{ bounceStiffness: 200, bounceDamping: 20 }}
-              animate={controls}
-              onMouseEnter={() => setIsHovering(true)}
-              onMouseLeave={() => setIsHovering(false)}
-            >
-              {extendedProjects.map((project, index) => (
+          {/* Grid wrapper with styling */}
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {visibleProjects.map((project, index) => (
                 <motion.a
                   key={index}
                   href={project.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="group relative w-[380px] shrink-0 overflow-hidden rounded-2xl"
+                  className="group relative w-full overflow-hidden rounded-2xl"
                   whileHover={{ y: -4 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
@@ -215,45 +145,30 @@ export const ProjectsSection = () => {
                   </div>
                 </motion.a>
               ))}
-            </motion.div>
+            </div>
           </div>
 
-          {/* Controls */}
-          <div className="mt-8 flex items-center justify-center gap-4">
-            <span
-              onClick={() => controls.start({ x: 0 })}
-              className="relative inline-flex items-center gap-2 rounded-full text-white bg-[#120626] px-5 py-2.5 ring-1 ring-white/10 transition-colors group-hover:bg-[#1b0a33]"
-            >
-              <FaRedo className="opacity-90" />
-              Reset
-            </span>
-
-            <span
-              onClick={() => controls.stop()}
-              className="relative inline-flex items-center gap-2 rounded-full text-white bg-[#120626] px-5 py-2.5 ring-1 ring-white/10 transition-colors group-hover:bg-[#1b0a33]"
-            >
-              <FaPause className="opacity-90" />
-              Pause
-            </span>
-
-            <span
-              onClick={() => {
-                if (!maxX) return;
-                controls.start({
-                  x: [0, -maxX],
-                  transition: {
-                    duration: Math.max(12, maxX / 100),
-                    ease: "linear",
-                    repeat: Infinity,
-                  },
-                });
-              }}
-              className="relative inline-flex items-center gap-2 rounded-full text-white bg-[#120626] px-5 py-2.5 ring-1 ring-white/10 transition-colors group-hover:bg-[#1b0a33]"
-            >
-              <FaPlay className="opacity-90" />
-              Play
-            </span>
-          </div>
+          {/* Show More Button */}
+          {!showAll && (
+            <div className="mt-8 flex justify-center">
+              <button
+                onClick={() => setShowAll(true)}
+                className="relative inline-flex items-center gap-2 rounded-full bg-[#120626] px-6 py-3 text-lg font-semibold text-black ring-1 ring-white/10 transition-colors hover:bg-[#1b0a33]"
+              >
+                Show more
+              </button>
+            </div>
+          )}
+          {showAll && (
+            <div className="mt-8 flex justify-center">
+              <button
+                onClick={() => setShowAll(false)}
+                className="relative inline-flex items-center gap-2 rounded-full bg-[#120626] px-6 py-3 text-lg font-semibold text-black ring-1 ring-white/10 transition-colors hover:bg-[#1b0a33]"
+              >
+                Show Less
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </section>

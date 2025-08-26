@@ -5,6 +5,7 @@ import { FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import pic from "./image2.png";
+import Interactive3DContact from "./Interactive3DContact";
 export const ContactSection = () => {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -69,7 +70,7 @@ export const ContactSection = () => {
       </div>
 
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 md:grid-cols-2">
-        {/* Left: Glowing framed image */}
+        {/* Left: Glowing framed image + 3D interactive element */}
         <motion.div
           className="relative mx-auto w-full max-w-md"
           initial={{ x: -40, opacity: 0 }}
@@ -78,20 +79,11 @@ export const ContactSection = () => {
           transition={{ duration: 0.8 }}
         >
           <div className="relative rounded-3xl p-[3px]">
-            <div className="absolute inset-0 -z-10 animate-[spin_12s_linear_infinite] rounded-3xl bg-[conic-gradient(from_0deg,rgba(75,0,130,0.35),rgba(106,13,173,0.35),rgba(75,0,130,0.35))]"></div>
-            <div className="relative rounded-3xl bg-[#15072b]/70 p-3 ring-1 ring-white/10 backdrop-blur-lg shadow-2xl">
-              <div className="relative overflow-hidden rounded-2xl">
-                <img
-                  src={pic}
-                  alt="mypic"
-                  className="h-auto w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-              </div>
+            <div className="absolute inset-0 -z-10 "></div>
+            <div className="relative rounded-3xl">
+              <Interactive3DContact height={520} textureSrc={pic} />
             </div>
           </div>
-          <div className="pointer-events-none absolute -left-6 -top-6 h-24 w-24 rounded-full bg-[#4b0082]/30 blur-2xl"></div>
-          <div className="pointer-events-none absolute -bottom-8 -right-6 h-24 w-24 rounded-full bg-[#6a0dad]/30 blur-2xl"></div>
         </motion.div>
 
         {/* Right: Contact form in glass card */}
