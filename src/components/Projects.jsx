@@ -68,7 +68,7 @@ export const ProjectsSection = () => {
   const visibleProjects = showAll ? projects : projects.slice(0, 6);
 
   return (
-    <section className="relative min-w-screen bg-[#210636] py-24">
+    <section className="relative min-w-screen bg-[#210636] py-20 md:py-24">
       {/* Ambient gradients matching hero */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-[#4b0082]/30 blur-3xl"></div>
@@ -77,7 +77,7 @@ export const ProjectsSection = () => {
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         <motion.h2
-          className="mb-14 text-center text-5xl font-extrabold text-white md:text-6xl"
+          className="mb-12 md:mb-14 text-center text-5xl font-extrabold text-white md:text-6xl"
           initial={{ y: -20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
@@ -92,8 +92,8 @@ export const ProjectsSection = () => {
           <div className="pointer-events-none absolute inset-0 -z-10 rounded-3xl bg-gradient-to-r from-[#4b0082]/20 via-transparent to-[#6a0dad]/20 blur-xl"></div>
 
           {/* Grid wrapper with styling */}
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6 backdrop-blur">
+            <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
               {visibleProjects.map((project, index) => (
                 <motion.a
                   key={index}
@@ -109,7 +109,7 @@ export const ProjectsSection = () => {
                     <div className="absolute inset-0 -z-10 animate-[spin_10s_linear_infinite] rounded-2xl bg-[conic-gradient(from_0deg,rgba(75,0,130,0.35),rgba(106,13,173,0.35),rgba(75,0,130,0.35))]"></div>
                   </div>
                   <div className="relative rounded-2xl bg-[#16072c]/80 ring-1 ring-white/10">
-                    <div className="relative h-72 overflow-hidden">
+                    <div className="relative h-56 sm:h-64 md:h-72 lg:h-80 overflow-hidden">
                       <img
                         src={project.image}
                         alt={project.title}
